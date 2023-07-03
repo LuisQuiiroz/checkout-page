@@ -1,0 +1,29 @@
+---
+interface Props {
+  label: string;
+  placeholder: string;
+  icon:
+    | "mail"
+    | "phone"
+    | "account"
+    | "home"
+    | "building"
+    | "world"
+    | "mailbox";
+}
+
+const { label, placeholder, icon } = Astro.props;
+---
+
+<div>
+  <label for={label}>{label}</label>
+  <img src={`/icons/${icon}.svg`} alt={label} />
+  <select name={label} id={label}>
+    <option value="usa">Mexico</option>
+    <option value="usa">Brazil</option>
+    <option value="usa">Argentina</option>
+    <option value="usa">Colombia</option>
+    <option value="usa">Chile</option>
+    <option value="usa">USA</option>
+  </select>
+</div>

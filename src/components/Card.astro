@@ -1,0 +1,31 @@
+---
+import Input from "./Input.astro";
+import InputSelect from "./InputSelect.astro";
+---
+
+<form>
+  <div>
+    <p>Contact infomation</p>
+    <Input label="E-mail" placeholder="Enter your email..." icon="mail" />
+    <Input label="Phone" placeholder="Enter your phone..." icon="phone" />
+  </div>
+
+  <div>
+    <p>Shipping address</p>
+    <Input label="Full name" placeholder="Your full name..." icon="account" />
+    <Input label="Address" placeholder="Your address..." icon="home" />
+    <Input label="City" placeholder="Your city..." icon="building" />
+    <div>
+      <InputSelect label="Country" placeholder="Your country..." icon="world" />
+      <Input
+        label="Postal Code"
+        placeholder="Your postal code..."
+        icon="mailbox"
+      />
+    </div>
+  </div>
+
+  <input type="checkbox" id="save" />
+  <label for="save">Save this information for next time</label>
+  <button>Continue</button>
+</form>

@@ -1,0 +1,28 @@
+---
+export interface Itemdata {
+  name: string;
+  originalPrice: number;
+  price: number;
+  amount: number;
+  urlImg: string;
+}
+
+interface Props {
+  item: Itemdata;
+}
+const { item } = Astro.props;
+
+const { name, originalPrice, price, amount, urlImg } = item;
+---
+
+<div>
+  <img src={urlImg} alt={name} />
+  <p>{name}</p>
+  <p>{price}</p>
+  <p>{originalPrice}</p>
+  <div>
+    <button>-</button>
+    <p>{amount}</p>
+    <button>+</button>
+  </div>
+</div>

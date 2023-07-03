@@ -1,0 +1,40 @@
+---
+import Item, { Itemdata } from "./Item.astro";
+
+const data: Itemdata[] = [
+  {
+    name: "Vintage Backbag",
+    originalPrice: 94.99,
+    price: 54.99,
+    amount: 1,
+    urlImg: "/photo1.png",
+  },
+  {
+    name: "Levi Shoes",
+    originalPrice: 124.99,
+    price: 74.99,
+    amount: 1,
+    urlImg: "/photo2.png",
+  },
+];
+
+const shipping = 19;
+
+const dataPrice = data.map((item) => item.price);
+const totalPrice = dataPrice.reduce((acc, curr) => (acc += curr), 0);
+const total = totalPrice + shipping;
+
+const formatAmount = (amount: number) => `$${amount}`;
+---
+
+<div>
+  {data.map((item) => <Item item={item} />)}
+  <div>
+    <p>Shipping</p>
+    <p>{formatAmount(shipping)}</p>
+  </div>
+  <div>
+    <p>Total</p>
+    <p>{formatAmount(total)}</p>
+  </div>
+</div>
