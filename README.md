@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Checkout Page</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://checkout-page-q.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/LuisQuiiroz/checkout-page">
       Solution
     </a>
     <span> | </span>
@@ -30,27 +30,40 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![image](https://github.com/LuisQuiiroz/checkout-page/assets/93633867/a8512f10-a6c7-42ca-9398-4d8477d944aa)
+
+![image](https://github.com/LuisQuiiroz/checkout-page/assets/93633867/b2aedca8-daff-4e66-98ae-4b09334000f6)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 - Where can I see your demo?
+
+  [Here](https://checkout-page-q.netlify.app/)
+  
 - What was your experience?
+
+  my experience was gratifying, since I was able to reuse many components and the design was not so difficult
+  
 - What have you learned/improved?
+
+  I learned how to use astro, I also realized that Tailwind integration with astro is very easy.
+  Improved my skills with Tailwind and improved my form validation skills using React
+
 - Your wisdom? :)
+
+  Everything is possible with patience and creativity
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
+- [Astro](https://astro.build/)
+- [React](https://es.react.dev/)
 - [Tailwind](https://tailwindcss.com/)
 
 ## Features
@@ -75,16 +88,7 @@ $ npm install
 $ npm start
 ```
 
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [LuisQuiiroz](https://github.com/LuisQuiiroz)
+- LinkedIn [LuisQuiiroz](https://www.linkedin.com/in/luis-quiiroz/)
