@@ -9,11 +9,30 @@ import Card from "../components/Card.astro";
 		<link rel="icon" type="image/svg+xml" href="devchallenges.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Checkout Page</title>
 	</head>
-	<body>
-		<h1>Checkout</h1>
-		<Items />
-		<Card />
+	<body
+		class="font-montserrat p-3 md:px-16 md:py-8 container mx-auto max-w-5xl"
+	>
+		<h1 class="text-gray-1 font-bold text-2xl lg:text-4xl pb-5 lg:pb-12">
+			Checkout
+		</h1>
+		<main class="md:flex md:gap-4 lg:gap-16 xl:gap-32">
+			<div class="md:w-5/12 md:order-last">
+				<Items />
+			</div>
+			<div class="md:w-7/12">
+				<Card />
+			</div>
+		</main>
 	</body>
+	<footer class="flex justify-center text-gray-5 text-sm pt-24">
+		created by <b class="px-1"> Quiiroz</b> - devChallenges.io
+	</footer>
 </html>

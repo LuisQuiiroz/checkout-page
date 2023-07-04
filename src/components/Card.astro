@@ -5,27 +5,48 @@ import InputSelect from "./InputSelect.astro";
 
 <form>
   <div>
-    <p>Contact infomation</p>
+    <p class="pt-10 md:pt-0 pb-3 text-gray-1 text-sm lg:text-xl font-bold">
+      Contact infomation
+    </p>
     <Input label="E-mail" placeholder="Enter your email..." icon="mail" />
     <Input label="Phone" placeholder="Enter your phone..." icon="phone" />
   </div>
 
   <div>
-    <p>Shipping address</p>
+    <p class="pt-7 pb-3 text-gray-1 text-xs lg:text-xl font-bold">
+      Shipping address
+    </p>
     <Input label="Full name" placeholder="Your full name..." icon="account" />
     <Input label="Address" placeholder="Your address..." icon="home" />
     <Input label="City" placeholder="Your city..." icon="building" />
-    <div>
-      <InputSelect label="Country" placeholder="Your country..." icon="world" />
-      <Input
-        label="Postal Code"
-        placeholder="Your postal code..."
-        icon="mailbox"
-      />
+    <div class="flex gap-4 lg:gap-8">
+      <div class="w-1/2">
+        <InputSelect
+          label="Country"
+          placeholder="Your country..."
+          icon="world"
+        />
+      </div>
+      <div class="w-1/2">
+        <Input
+          label="Postal Code"
+          placeholder="Your postal code..."
+          icon="mailbox"
+        />
+      </div>
     </div>
   </div>
 
-  <input type="checkbox" id="save" />
-  <label for="save">Save this information for next time</label>
-  <button>Continue</button>
+  <div class="flex items-center gap-2">
+    <input type="checkbox" id="save" />
+    <label class="text-gray-2 text-2xs lg:text-xs font-bold" for="save"
+      >Save this information for next time</label
+    >
+  </div>
+  <div class="flex justify-end">
+    <button
+      class="mt-5 py-4 px-11 rounded-xl text-base text-white font-bold bg-orange-1"
+      >Continue</button
+    >
+  </div>
 </form>
