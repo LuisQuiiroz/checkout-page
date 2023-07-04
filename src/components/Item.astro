@@ -17,7 +17,7 @@ const { item } = Astro.props;
 const { name, originalPrice, price, amount, urlImg } = item;
 ---
 
-<div class="flex gap-4 pb-8">
+<div class="flex gap-4 lg:gap-6 pb-8">
   <div class="w-5/12 md:w-1/2">
     <img class="w-full rounded-xl" src={urlImg} alt={name} />
   </div>
