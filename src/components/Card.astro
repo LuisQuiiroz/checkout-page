@@ -3,7 +3,7 @@ import Input from "./Input.astro";
 import InputSelect from "./InputSelect.astro";
 ---
 
-<form>
+<form id="form">
   <div>
     <p class="pt-10 md:pt-0 pb-3 text-gray-1 text-sm lg:text-xl font-bold">
       Contact infomation
@@ -38,10 +38,18 @@ import InputSelect from "./InputSelect.astro";
   </div>
 
   <div class="flex items-center gap-2">
-    <input type="checkbox" id="save" />
+    <input type="checkbox" id="save" name="save" />
     <label class="text-gray-2 text-2xs lg:text-xs font-bold" for="save"
       >Save this information for next time</label
     >
+  </div>
+  <div class="p-2">
+    <p class="text-red-600 font-bold hidden" id="error">
+      *There are empty fields
+    </p>
+    <p class="text-green-600 font-bold hidden" id="success">
+      Successful validation, data sent
+    </p>
   </div>
   <div class="flex justify-end">
     <button
@@ -50,3 +58,94 @@ import InputSelect from "./InputSelect.astro";
     >
   </div>
 </form>
+<script>
+  // Interfaz para el objeto FormData
+  interface FormFields {
+    email: string;
+    phone: number;
+    fullName: string;
+    address: string;
+    city: string;
+    country: string;
+    PostalCode: number;
+  }
+
+  // Función para validar el formulario
+  function validateForm(formData: FormData): FormFields | null {
+    const email = formData.get("E-mail") as string;
+    const phone = parseInt(formData.get("Phone") as string);
+    const fullName = formData.get("Full name") as string;
+    const address = formData.get("Address") as string;
+    const city = formData.get("City") as string;
+    const country = formData.get("Country") as string;
+    const PostalCode = parseInt(formData.get("Postal Code") as string);
+
+    // Validar los campos requeridos
+    if (
+      !email ||
+      isNaN(phone) ||
+      !fullName ||
+      !address ||
+      !city ||
+      !country ||
+      isNaN(PostalCode)
+    ) {
+      return null;
+    }
+
+    // Validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return null;
+    }
+
+    // Devolver los campos validados
+    return {
+      email,
+      phone,
+      fullName,
+      address,
+      city,
+      country,
+      PostalCode,
+    };
+  }
+
+  // Obtener el formulario del DOM
+  const form = document.getElementById("form") as HTMLFormElement;
+  const success = document.getElementById("success");
+  const error = document.getElementById("error");
+
+  // Manejar el envío del formulario
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const totalPrice = document.getElementById("total-price")?.textContent;
+
+    const formData = new FormData(form);
+    const validatedForm = validateForm(formData);
+
+    // guardar en localStorage
+    const save = formData.get("save");
+    if (save === "on") {
+      window.localStorage.setItem(
+        "info_contanct",
+        JSON.stringify({ validateForm, totalPrice })
+      );
+    }
+
+    if (validatedForm) {
+      // Los campos del formulario son válidos, hacer algo con los datos
+      error?.classList.add("hidden");
+      success?.classList.remove("hidden");
+      console.log({ validatedForm, totalPrice });
+      form.reset();
+      // Aquí puedes enviar los datos a través de una petición AJAX, por ejemplo
+    } else {
+      // Los campos del formulario no son válidos, mostrar un mensaje de error
+      error?.classList.remove("hidden");
+      success?.classList.add("hidden");
+      console.log("Error: invalid fields");
+    }
+  });
+</script>
