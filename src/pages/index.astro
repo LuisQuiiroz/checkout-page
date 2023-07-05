@@ -1,5 +1,5 @@
 ---
-import Items from "../components/Items.astro";
+import { Items } from "../components/Items";
 import Card from "../components/Card.astro";
 ---
 
@@ -25,7 +25,7 @@ import Card from "../components/Card.astro";
 		</h1>
 		<main class="md:flex md:gap-4 lg:gap-16 xl:gap-32">
 			<div class="md:w-5/12 md:order-last">
-				<Items />
+				<Items client:only="react" />
 			</div>
 			<div class="md:w-7/12">
 				<Card />

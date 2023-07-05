@@ -1,1 +1,1 @@
-export const formatAmount = (amount: number) => `$${amount}`;
+export const formatAmount = (amount: number) => `$${amount.toFixed(2)}`;
