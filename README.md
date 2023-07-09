@@ -86,7 +86,7 @@ $ git clone https://github.com/LuisQuiiroz/checkout-page.git
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
 ## Contact
