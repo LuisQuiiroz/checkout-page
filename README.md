@@ -79,7 +79,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/LuisQuiiroz/checkout-page.git
 
 # Install dependencies
 $ npm install
@@ -92,3 +92,4 @@ $ npm start
 
 - GitHub [LuisQuiiroz](https://github.com/LuisQuiiroz)
 - LinkedIn [LuisQuiiroz](https://www.linkedin.com/in/luis-quiiroz/)
+- Twitter [Luis_Quiiroz](https://twitter.com/Luis_Quiiroz)
